@@ -33,8 +33,17 @@ services:
     command: pnpm run dev payments
     env_file:
       - ./apps/payments/.env
-    ports:
-      - '3003:3003'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+  notifications:
+    build: 
+      context: .
+      dockerfile: ./apps/notifications/dockerfile
+      target: development
+    command: pnpm run dev notifications
+    env_file:
+      - ./apps/notifications/.env
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
