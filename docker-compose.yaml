@@ -25,3 +25,16 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+  payments:
+    build: 
+      context: .
+      dockerfile: ./apps/payments/dockerfile
+      target: development
+    command: pnpm run dev payments
+    env_file:
+      - ./apps/payments/.env
+    ports:
+      - '3003:3003'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
