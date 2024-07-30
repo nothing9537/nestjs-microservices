@@ -1,2 +1,2 @@
 export const AUTHENTICATE_EVENT = 'authenticate';
-export const CREATE_CHARGE = 'create_charge';
+export const CREATE_CHARGE_EVENT = 'CREATE_CHARGE_EVENT';
