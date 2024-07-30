@@ -8,12 +8,12 @@ import { AUTH_SERVICE, DatabaseModule, LoggerModule } from '@app/common';
 import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import { ReservationsRepository } from './reservations.repository';
-import { ReservationDocument, ReservationSchema } from './models/reservation.schema';
+import { ReservationsDocument, ReservationsSchema } from './models/reservations.schema';
 
 @Module({
   imports: [
     DatabaseModule,
-    DatabaseModule.forFeature([{ name: ReservationDocument.name, schema: ReservationSchema }]),
+    DatabaseModule.forFeature([{ name: ReservationsDocument.name, schema: ReservationsSchema }]),
     LoggerModule,
     ConfigModule.forRoot({
       isGlobal: true,
