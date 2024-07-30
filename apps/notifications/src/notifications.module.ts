@@ -13,6 +13,10 @@ import { NotificationsService } from './notifications.service';
       isGlobal: true,
       validationSchema: Joi.object({
         PORT: Joi.number().required(),
+        GOOGLE_0AUTH_CLIENT_ID: Joi.string().required(),
+        GOOGLE_0AUTH_CLIENT_SECRET: Joi.string().required(),
+        GOOGLE_OAUTH_REFRESH_TOKEN: Joi.string().required(),
+        SMTP_USER: Joi.string().required(),
       })
     }),
     LoggerModule,
@@ -20,4 +24,4 @@ import { NotificationsService } from './notifications.service';
   controllers: [NotificationsController],
   providers: [NotificationsService],
 })
-export class NotificationsModule {}
+export class NotificationsModule { }
